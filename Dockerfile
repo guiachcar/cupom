@@ -7,8 +7,6 @@ WORKDIR /cupom_app
 ADD . .
 
 RUN pip install -r requirements.txt
-RUN python run.py db init
-RUN python run.py db migrate 
 
 EXPOSE 8000
 
