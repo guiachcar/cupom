@@ -7,8 +7,6 @@ services:
     links:
       - laradock_mysql
     container_name: cupom_container
-    depends_on:
-      - laradock_mysql
     stdin_open: true
     tty: true
     environment:
