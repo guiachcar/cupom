@@ -9,11 +9,3 @@ services:
     container_name: cupom_container
     stdin_open: true
     tty: true
-    environment:
-        PORT: 8000
-        MYSQL_ROOT_PASSWORD: root
-        DB_USERNAME: root
-        DB_PASSWORD: root
-        DB_HOST: mysql
-        DATABASE_NAME: gstest
-  
