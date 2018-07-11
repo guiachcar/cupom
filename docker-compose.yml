@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"
+      - "5000:5000"
     external_links:
       - laradock_mysql
     container_name: cupom_container
