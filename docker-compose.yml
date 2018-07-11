@@ -5,10 +5,10 @@ services:
     ports:
       - "8000:8000"
     links:
-      - /laradock_mysql_1
+      - laradock_mysql
     container_name: cupom_container
     depends_on:
-      - /laradock_mysql_1
+      - laradock_mysql
     stdin_open: true
     tty: true
     environment:
