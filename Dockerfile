@@ -1,19 +1,15 @@
-FROM python:3.4.5-slim
+FROM python:2.7
 
-## make a local directory
-RUN mkdir /counter_app
+RUN mkdir /cupom_app
 
-# set "counter_app" as the working directory from which CMD, RUN, ADD references
-WORKDIR /counter_app
+WORKDIR /cupom_app
 
-# now copy all the files in this directory to /code
 ADD . .
 
-# pip install the local requirements.txt
 RUN pip install -r requirements.txt
+RUN python run.py db init
+RUN python run.py db migrate 
 
-# Listen to port 5000 at runtime
-EXPOSE 5000
+EXPOSE 8000
 
-# Define our command to be run when launching the container
 CMD flask run --host 0.0.0.0

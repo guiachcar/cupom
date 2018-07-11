@@ -3,33 +3,29 @@ services:
   web:
     build: .
     ports:
-      - "5000:5000"
-    volumes:
-      - /opt/flask-mysql-boilerplate:/counter_app
+      - "8000:8000"
     links:
       - db:mysql
-    container_name: counterappmysql_web_1
+    container_name: cupom_container
     depends_on:
       - db
     stdin_open: true
     tty: true
     environment:
-        PORT: 5000
-        SECRET_KEY: 'you-will-never-guess'
-        DEBUG: 1 # can't pass True here, but 1 works
-        MYSQL_ROOT_PASSWORD: rootpass
-        DB_USERNAME: counter_user
-        DB_PASSWORD: counter_password
+        PORT: 8000
+        MYSQL_ROOT_PASSWORD: gspass
+        DB_USERNAME: gsuser
+        DB_PASSWORD: gspass
         DB_HOST: mysql
-        DATABASE_NAME: counter
+        DATABASE_NAME: gstest
   db:
     image: mysql:5.7
     restart: always
-    container_name: counterappmysql_db_1
+    container_name: db_container
     ports:
       - "3306:3306"
     environment:
-        MYSQL_USER: counter_user
-        MYSQL_PASSWORD: counter_password
-        MYSQL_ROOT_PASSWORD: rootpass
-        MYSQL_DATABASE: counter
+        MYSQL_USER: gsuser
+        MYSQL_PASSWORD: gspass
+        MYSQL_ROOT_PASSWORD: gspass
+        MYSQL_DATABASE: gstest
