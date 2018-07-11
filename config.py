@@ -1,4 +1,4 @@
 DEBUG = True
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@178.128.148.90/gstest?charset=utf8mb4'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///storage.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
