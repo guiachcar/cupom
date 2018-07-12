@@ -12,6 +12,7 @@ def cupoms_listar():
         cupom_data['nome'] = cupom.nome
         cupom_data['email'] = cupom.email
         cupom_data['valor'] = cupom.valor
+        cupom_data['id_compra'] = cupom.id_compra
         output.append(cupom_data)
     return jsonify({'cupoms' : output})
 
