@@ -19,7 +19,7 @@ def cupoms_listar():
 @app.route('/cupoms', methods=['POST'])
 def cupom_cadastrar():
     data = request.get_json()
-    cupom = Cupom(nome=data['nome'], email=data['email'], valor=data['valor'])
+    cupom = Cupom(nome=data['nome'], email=data['email'], valor=data['valor'], id_compra=data['id_compra'])
     cupom.save()
     return jsonify(data),201
 
